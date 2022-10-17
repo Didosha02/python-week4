@@ -15,4 +15,27 @@ class BankAccount:
 b = BankAccount(500)
 print(b.balance)
 
+2)
+
+class Money:
+    def __init__(self, number, currency, amount):
+        self.number = number
+        self.currency = currency
+        self.amount = amount
+
+    def to_tenge(self):
+        if self.currency == 'EUR':
+            return self.number * self.amount * 450
+        if self.currency == 'RUB':
+            return self.number * self.amount * 8
+        if self.currency == 'USD':
+            return self.number * self.amount * 470
+
+    def __str__(self):
+        return self.to_tenge
+
+    
+m1 = Money(400, 'EUR', 4)
+m2 = Money(100, 'RUB', 3)
+
 
